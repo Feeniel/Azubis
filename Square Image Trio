@@ -1,0 +1,53 @@
+.logo-trio{
+    display: flex;
+    justify-content: center;
+    
+    .containerQ{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    margin: 0!important;
+    flex-wrap: wrap;
+    
+        .responsiveImageQ{
+            border: 5px solid @lp-primary;
+            padding: 15px;
+            background-color: #fff;
+        }
+    
+    @media screen and (min-width: @screen-sm-min){
+        width: 100%;
+    }
+        &:before {
+            content:"";
+            position: absolute;
+            border: solid 7px @lp-primary;
+            height: 50%;
+            top:  25%;
+            width: 100%;
+            border-radius: 10px;
+        
+            @media screen and (min-width: @screen-md-min){
+                content: "";
+                position: absolute;
+                border: none;
+                background-color: @lp-primary;
+                height: 8px;
+                top: 50%;
+            }
+        }
+        
+        &:after{
+            display: none;
+        }
+    
+        .logo-col{
+            width: 35%;
+            @media screen and(min-width: @screen-md-min){
+                width: 25%;
+            }
+        }    
+    }
+}
