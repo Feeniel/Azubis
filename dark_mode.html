@@ -1,0 +1,108 @@
+<body>
+    <header id="header">
+        <div id="dark_mode" class="icon" onclick="dark_mode()">
+            <a>
+                <img src="../img/icons/dark.svg" alt="Dark Mode">
+            </a>
+        </div>
+        <div id="light_mode" class="icon" onclick="light_mode()">
+            <a>
+                <img src="../img/icons/light.svg" alt="Light Mode">
+            </a>
+        </div>
+    </header>
+</body>
+
+<style>
+    :root {
+        --primary-color: #2289de;
+        --secondary-color: #67215f;
+        --tertiary-color: #ff2e6f;
+        --quarternary-color: #001854;
+        --base-color: #fff;
+        --base-deviation-color: #f2f2f2;
+        --font-color: #1e1e41;
+    }
+
+    body{
+        max-width: 100%;
+        margin: auto;
+        background-color: var(--base-color);
+        color: var(--font-color);
+        line-height: 1.5;
+        overflow-x: hidden;
+    }
+
+    #header {
+        background-color: var(--base-color);
+        border-bottom: 4px solid transparent;
+        border-image: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+        border-image-slice: 1;
+        width: 100%;
+        position: fixed;
+        transition: 0.5s top ease-in-out;
+        display: flex;
+        justify-content: center;
+        z-index: 2;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon img {
+        margin-top: 5px;
+        height: 45px;
+    }
+
+    #dark_mode {
+        display: flex;
+        fill: var(--primary-color);
+        cursor: pointer;
+    }
+
+    #light_mode {
+        display: none;
+        fill: var(--primary-color);
+        cursor: pointer;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+
+<script>
+function dark_mode() {
+
+document.getElementById("light_mode").style.display = "flex";
+
+
+document.getElementById("dark_mode").style.display = "none";
+
+
+var r = document.querySelector(':root');
+    
+    r.style.setProperty('--base-color', '#121212');
+    r.style.setProperty('--base-deviation-color', '#232323');
+    r.style.setProperty('--font-color', '#FFF');
+}
+
+function light_mode() {
+
+document.getElementById("dark_mode").style.display = "flex";
+
+
+document.getElementById("light_mode").style.display = "none";
+
+
+var r = document.querySelector(':root');
+
+
+    r.style.setProperty('--base-color', '#fff')
+    r.style.setProperty('--base-deviation-color', '#efefef')
+    r.style.setProperty('--font-color', '#121212')
+
+}
+</script>
